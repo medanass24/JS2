@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location de voitures - Infos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-bottom: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 30px;
+        }
+        header h1 {
+            color: #fff;
+            font-size: 3em;
+            position: relative;
+            animation: animateTitle 1.5s ease-out forwards, slideIn 1s ease-out 0.5s forwards;
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+
+        @keyframes animateTitle {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+        <h1> INFOS</h1>
+    </header>
+
+    <nav>
+        <a href="cc.html">Accueil</a>
+        <a href="infos.html">Infos</a>
+        <a href="contact.html">Contact</a>
+        <a href="reserve.html">Réserve</a>
+        <a href="commentaire.html">Commentaires</a>
+    </nav>
+
+    <div class="container">
+        <h2>À propos de notre entreprise</h2>
+        <p>Nous sommes une entreprise de location de voitures offrant une large gamme de véhicules pour répondre à vos besoins de déplacement. Que vous ayez besoin d'une voiture pour un voyage d'affaires, des vacances en famille ou simplement pour une journée de plaisir, nous avons la solution adaptée à vos besoins.</p>
+        <p>Nos services comprennent la location à court et à long terme, des options de location avec chauffeur et la possibilité de choisir parmi une variété de modèles et de marques de voitures. Notre objectif est de rendre votre expérience de location aussi simple et agréable que possible.</p>
+        <p>N'hésitez pas à nous contacter pour toute demande de renseignements supplémentaires ou pour effectuer une réservation. Nous sommes là pour vous aider à trouver la voiture parfaite pour votre prochain voyage.</p>
+    </div>
+
+    <footer>
+        <p>Tous droits réservés &copy; 2024 Location de voitures</p>
+    </footer>
+</body>
+</html>

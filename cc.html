@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Location de voitures de qualité à des prix compétitifs. Louez votre voiture en ligne dès aujourd'hui.">
+    <meta name="keywords" content="location de voitures, voitures de location, louer une voiture">
+    <title>Location de voitures</title>
+   
+</head>
+<style>
+ /* styles.css */
+
+/* Reset CSS */
+body, h1, h2, h3, p, ul, li, figure {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #c8e31b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: #312a26;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #dadada; /* Couleur de fond */
+    color: #333; /* Couleur du texte */
+}
+
+.container {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('background-image.jpg'); /* Remplacez 'background-image.jpg' par le chemin de votre image de fond */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.1); /* Couleur de superposition semi-transparente */
+}
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid #a3dc07;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #e2f301;
+}
+
+.card .content {
+    padding: 10px;
+    text-align: center;
+}
+
+.card h2 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.card p {
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(251, 134, 0);
+    padding: 5px;
+}
+
+/* Animation au survol */
+.card:hover {
+    background-color: #c11717;
+    transform: translateY(-5px);
+}
+
+.card:hover p {
+    opacity: 1;
+}
+
+.benefits {
+    padding: 20px;
+    text-align: center;
+}
+
+.benefit {
+    margin-bottom: 20px;
+}
+
+.benefit img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.testimonials {
+    padding: 20px;
+    text-align: center;
+}
+
+.testimonial {
+    margin-bottom: 20px;
+}
+
+.testimonial img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.testimonial p {
+    margin-bottom: 5px;
+}
+
+.testimonial cite {
+    font-style: normal;
+}
+footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+</style>
+
+    <body>
+        <header>
+            <h1>RENTAL CARS</h1>
+        </header>
+        <nav>
+            <a href="infos.html">Infos</a>
+            <a href="contact.html">Contact</a>
+            <a href="reserve.html">Réserve</a>
+            <a href="commentaire.html">Commentaires</a>
+        </nav>
+    
+        <section class="benefits">
+            <h2>Pourquoi choisir notre service de location de voitures ?</h2>
+            <div class="benefit">
+                <img src="q3.jpeg" alt="Facilité de réservation">
+                <h3>Facilité de réservation</h3>
+                <p>Réservez votre voiture en quelques clics avec notre interface conviviale.</p>
+            </div>
+            <div class="benefit">
+                <img src="a1.jpeg" alt="Large sélection de véhicules">
+                <h3>Large sélection de véhicules</h3>
+                <p>Choisissez parmi une variété de voitures de qualité pour répondre à vos besoins.</p>
+            </div>
+            <div class="benefit">
+                <img src="a2.jpeg" alt="Assistance routière 24/7">
+                <h3>Assistance routière 24/7</h3>
+                <p>Profitez d'une assistance routière disponible 24 heures sur 24, 7 jours sur 7.</p>
+            </div>
+        </section>
+    
+        <section class="search">
+            <input type="text" id="searchBar" placeholder="Rechercher par marque ou modèle...">
+            <button onclick="filterCars()">Rechercher</button>
+        </section>
+    
+        <main id="carList" class="grid-container">
+            <!-- Les cartes seront ajoutées ici dynamiquement -->
+        </main>
+    
+        <div id="carDetails" class="car-details">
+            <!-- Les détails de la voiture s'afficheront ici -->
+        </div>
+    
+        <section class="testimonials">
+            <h2>Témoignages de nos clients</h2>
+            <div class="testimonial">
+                <img src="z1.jpeg" alt="Témoignage 1">
+                <p>"Service excellent, véhicules bien entretenus et personnel très serviable. Je recommande vivement!"</p>
+                <cite>Arthur Shelby</cite>
+            </div>
+            <div class="testimonial">
+                <img src="z2.jpeg" alt="Témoignage 2">
+                <p>"Rapide, efficace et abordable. J'ai loué plusieurs fois avec eux et je n'ai jamais été déçu."</p>
+                <cite>Thomas Shelby</cite>
+            </div>
+        </section>
+    
+        <footer>
+            <p>Designed by Nejmi Mohamed Anass &copy; 2024 Location de voitures</p>
+        </footer>
+        <script>
+            // Données des voitures de location avec images et détails
+            const cars = [
+                { model: "Clio", brand: "Renault", price: "50€/jour", image: "1.jpg", details: "La Renault Clio est une automobile polyvalente du constructeur français Renault." },
+                { model: "208", brand: "Peugeot", price: "55€/jour", image: "2.jpg", details: "La Peugeot 208 est une voiture citadine du constructeur français Peugeot." },
+                { model: "Golf", brand: "Volkswagen", price: "60€/jour", image: "3.jpg", details: "La Volkswagen Golf est une voiture compacte du constructeur allemand Volkswagen." },
+                { model: "Corsa", brand: "Opel", price: "55€/jour", image: "4.jpg", details: "La Opel Corsa est une voiture polyvalente du constructeur allemand Opel." },
+                { model: "Focus", brand: "Ford", price: "60€/jour", image: "5.jpg", details: "La Ford Focus est une voiture compacte du constructeur américain Ford." },
+                { model: "Civic", brand: "Honda", price: "65€/jour", image: "6.jpg", details: "La Honda Civic est une voiture compacte du constructeur japonais Honda." },
+                { model: "A3", brand: "Audi", price: "70€/jour", image: "7.jpg", details: "L'Audi A3 est une voiture compacte de luxe du constructeur allemand Audi." },
+                { model: "Fiesta", brand: "Ford", price: "55€/jour", image: "8.jpg", details: "La Ford Fiesta est une voiture polyvalente du constructeur américain Ford." },
+                { model: "C-Class", brand: "Mercedes-Benz", price: "80€/jour", image: "9.jpg", details: "La Mercedes-Benz Classe C est une voiture de luxe du constructeur allemand Mercedes-Benz." },
+                { model: "Polo", brand: "Volkswagen", price: "55€/jour", image: "10.jpg", details: "La Volkswagen Polo est une voiture compacte du constructeur allemand Volkswagen." },
+                { model: "Megane", brand: "Renault", price: "60€/jour", image: "11.jpg", details: "La Renault Megane est une voiture familiale du constructeur français Renault." },
+                { model: "Série 1", brand: "BMW", price: "75€/jour", image: "12.jpg",details: "La BMW Série 1 est une voiture compacte premium du constructeur allemand BMW, alliant performances dynamiques et élégance."},
+                {model: "500",brand: "Fiat",price: "50€/jour",image: "13.jpg",details: "La Fiat 500 est une voiture citadine emblématique du constructeur italien Fiat, connue pour son style rétro et sa maniabilité."},
+                {model: "Yaris",brand: "Toyota", price: "55€/jour", image: "14.jpg",details: "La Toyota Yaris est une voiture polyvalente et économique du constructeur japonais Toyota, offrant une fiabilité et une efficacité énergétique élevées."},
+                { 
+        model: "A4", 
+        brand: "Audi", 
+        price: "75€/jour", 
+        image: "15.jpeg", 
+        details: "L'Audi A4 est une berline de luxe du constructeur allemand Audi, réputée pour son design élégant et ses performances élevées." 
+    },
+    { 
+        model: "208 GTi", 
+        brand: "Peugeot", 
+        price: "70€/jour", 
+        image: "16.jpeg", 
+        details: "La Peugeot 208 GTi est une version sportive de la célèbre voiture citadine, offrant une expérience de conduite dynamique et plaisante." 
+    },
+    { 
+        model: "Civic Type R", 
+        brand: "Honda", 
+        price: "80€/jour", 
+        image: "17.jpeg", 
+        details: "La Honda Civic Type R est une voiture compacte ultra-sportive, conçue pour offrir des performances exceptionnelles sur circuit tout en restant adaptée à un usage quotidien." 
+    },
+    { 
+        model: "Astra", 
+        brand: "Opel", 
+        price: "60€/jour", 
+        image: "18.jpeg", 
+        details: "L'Opel Astra est une voiture compacte polyvalente, offrant confort, efficacité énergétique et technologies de pointe pour une expérience de conduite moderne." 
+    },
+    { 
+        model: "C-Class Coupe", 
+        brand: "Mercedes-Benz", 
+        price: "85€/jour", 
+        image: "19.jpeg", 
+        details: "La Mercedes-Benz Classe C Coupé est une voiture de luxe à deux portes, offrant un mélange parfait de performances sportives et de raffinement." 
+    },
+    { 
+        model: "Mazda3", 
+        brand: "Mazda", 
+        price: "65€/jour", 
+        image: "20.jpeg", 
+        details: "La Mazda3 est une berline compacte élégante et dynamique, réputée pour son design innovant et ses performances équilibrées." 
+    }
+    
+    
+    
+                
+     
+    
+               
+            ];
+    
+            //Sélection des éléments HTML
+            const carList = document.getElementById("carList");
+            const carDetails = document.getElementById("carDetails");
+    
+            //Fonction pour générer les cartes de voitures
+            function generateCarCards() {
+                carList.innerHTML = ''; // Clear the current list
+                cars.forEach((car, index) => {
+                    
+                    const card = document.createElement("div");
+                    card.classList.add("card");
+                    card.dataset.index = index; 
+    
+                    const content = document.createElement("div");
+                    content.classList.add("content");
+                    content.innerHTML = `
+                        <img src="${car.image}" alt="${car.brand} ${car.model}">
+                        <h2>${car.brand} ${car.model}</h2>
+                        <p>Prix: ${car.price}</p>
+                    `;
+    
+                   
+                    card.appendChild(content);
+                    carList.appendChild(card);
+    
+                    
+                    card.addEventListener("click", () => {
+                        displayCarDetails(index);
+                    });
+                });
+            }
+    
+            //Fonction pour afficher les détails de la voiture
+            function displayCarDetails(index) {
+                const car = cars[index];
+                carDetails.innerHTML = `
+                    <h2>${car.brand} ${car.model}</h2>
+                    <img src="${car.image}" alt="${car.brand} ${car.model}">
+                    <p>Prix: ${car.price}</p>
+                    <p>Détails: ${car.details}</p>
+                `;
+            }
+    
+            // Fonction pour filtrer les voitures
+            function filterCars() {
+                const searchBar = document.getElementById('searchBar');
+                const searchText = searchBar.value.toLowerCase();
+                const filteredCars = cars.filter(car => 
+                    car.brand.toLowerCase().includes(searchText) || 
+                    car.model.toLowerCase().includes(searchText)
+                );
+    
+                // Clear the current list and display the filtered cars
+                carList.innerHTML = '';
+                filteredCars.forEach((car, index) => {
+                    const card = document.createElement("div");
+                    card.classList.add("card");
+                    card.dataset.index = index; 
+    
+                    const content = document.createElement("div");
+                    content.classList.add("content");
+                    content.innerHTML = `
+                        <img src="${car.image}" alt="${car.brand} ${car.model}">
+                        <h2>${car.brand} ${car.model}</h2>
+                        <p>Prix: ${car.price}</p>
+                    `;
+    
+                    card.appendChild(content);
+                    carList.appendChild(card);
+    
+                    card.addEventListener("click", () => {
+                        displayCarDetails(index);
+                    });
+                });
+            }
+    
+            //Appel de la fonction pour générer les cartes au chargement de la page
+            generateCarCards();
+        </script>
+    
+      
+    </body>
+    </html>
+    
